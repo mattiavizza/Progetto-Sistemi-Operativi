@@ -33,7 +33,7 @@ void *threadTA();
 int main(int argc, char *argv[]) {
 	int totalStudents;
 	printf("\n\nLettura degli studenti in corso...\n");
-	sleep(5);
+	sleep(3);
 	if(argc > 1) {
 		totalStudents = atoi(argv[1]);
 		printf("Caricamento degli studenti da linea di comando completato!\n");
