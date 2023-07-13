@@ -32,6 +32,17 @@ void *threadTA();
 
 int main(int argc, char *argv[]) {
 	int totalStudents;
+	printf("\n\nLettura degli studenti in corso...\n");
+	sleep(5);
+	if(argc > 1) {
+		totalStudents = atoi(argv[1]);
+		printf("Caricamento degli studenti da linea di comando completato!\n");
+		sleep(3);
+	} else {
+		totalStudents = STUDENTS;
+		printf("Caricamento default degli studenti completato!\n");
+		sleep(3);
+	}
 	printf("\n\t***Esecuzione del programma \"Teaching Assistant\"***\n\n");
 	sleep(1);
 	int studentsIDs[totalStudents];
