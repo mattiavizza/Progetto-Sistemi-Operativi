@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
 
 void *threadStudent(void *studentID) {
 	int id = *(int*)studentID;
-	while(1) {
+	while(TRUE) {
 		int time = rand() % 5;
 		printf("\tLo studente %d sta programmando. Tempo residuo: %d sec...\n", id, time);
 		sleep(time);
@@ -87,13 +87,13 @@ void *threadStudent(void *studentID) {
 }
 
 void *threadTA() {
-	while(1) {
+	while(TRUE) {
 		if(waitingStudents > 0) {
 			sleeping = FALSE;
 			sem_wait(&semStudents);
 			pthread_mutex_lock(&mutex);
 			int time = rand() % 5;
-			printf("Lo studente %d e' entrato nello studio. Tempo residuo: %d sec...\n", seats[nextTA], time, waitingStudents - 1);
+			printf("Lo studente %d e' entrato nello studio. Tempo residuo: %d sec...\n", seats[nextTA], time);
 			waitingStudents - 1 == 1 ? 
 			printf("\tHa atteso %da sola persona prima.\n", waitingStudents - 1) : 
 			printf("\tHa atteso %d persone prima.\n", waitingStudents - 1);
